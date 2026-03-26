@@ -1,27 +1,91 @@
 # parameter-copy-sda
+pyRevit extension for copying shared parameter values across multiple elements in Revit models.
 
-This tool allows Revit users to copy parameter values from a single source element to multiple target elements, even across different families or categories.
+Who is this for?
 
-Unlike generic parameter copy tools, it automatically detects and presents only those parameters that exist on the source and on all selected targets, significantly reducing errors and preventing invalid assignments.
+This extension is designed for:
 
-Key features
+Electrical planners (Elektroplaner)
+BIM modellers working in TGA projects
+Engineers working with mixed families and categories in Revit
+Background: Parameter Management in Revit
 
-Source → multi-target workflow with toggle selection
+In real-world BIM projects, parameter data is often:
 
-Shows common parameters only (intersection across all elements)
+distributed across multiple families
+inconsistent between elements
+difficult to standardize at scale
 
-Supports String, Integer, Double, and ElementId parameters
+Manually copying parameter values between elements can be:
 
-Skips read-only, missing, or incompatible parameters safely
+time-consuming
+error-prone
+unreliable when working across categories
 
-Clear summary report after execution
+Standard Revit workflows do not provide a safe and efficient way to copy parameters across multiple elements with validation.
 
-Designed for real-world BIM models and mixed-family selections
+What this tool does
 
-Typical use cases
+This tool allows users to copy parameter values from a single source element to multiple target elements, even across different families or categories.
 
-Copying height or installation metadata across devices
+Unlike generic parameter copy tools, it:
 
-Synchronizing MEP room information between elements
-
+automatically detects parameters shared across all selected elements
+prevents invalid parameter assignments
+ensures safe and consistent data transfer
+Features
+Source → Multi-Target Workflow
+Select one source element
+Select multiple target elements
+Use toggle-based selection for flexibility
+Smart Parameter Filtering
+Displays only common parameters (intersection across all elements)
+Eliminates invalid or missing parameter options
+Reduces user error significantly
+Supported Parameter Types
+String
+Integer
+Double
+ElementId
+Safe Execution
+Skips:
+read-only parameters
+missing parameters
+incompatible parameter types
+Prevents crashes and incorrect assignments
+Execution Summary
+Provides a clear report after execution
+Confirms:
+which parameters were copied
+how many elements were updated
+Typical Use Cases
+Copying installation height or metadata across devices
+Synchronizing MEP room-related information
 Standardizing shared parameters across different families
+Cleaning and aligning BIM data in mixed-category models
+Why this matters in practice
+
+In BIM workflows, data consistency is as critical as geometry.
+
+This tool enables:
+
+fast and reliable parameter standardization
+reduced manual editing effort
+fewer data inconsistencies in project models
+
+It is especially useful in large projects where elements come from multiple families and sources.
+
+Requirements
+Autodesk Revit 2020 or newer
+pyRevit (IronPython)
+Installation
+Install pyRevit
+https://docs.pyrevitlabs.io/
+Clone this repository into:
+%APPDATA%\pyRevit\Extensions
+Restart Revit
+Roadmap (planned)
+Parameter presets for frequently used workflows
+Persistent user settings
+Extended support for additional parameter types
+Improved UI for large element selections
